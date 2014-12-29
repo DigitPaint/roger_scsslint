@@ -1,6 +1,4 @@
 # Roger ScssLinter
-================
-
 roger_scsslinter lints scss using [scss-lint](https://github.com/causes/scss-lint). If present, ```.scss-lint.yml``` will be used as normal.
 
 ## Installation

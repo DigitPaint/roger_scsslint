@@ -4,9 +4,9 @@ require 'scss_lint/cli'
 require 'scss_lint/runner'
 
 module RogerScssLinter
+  # SCSS linter plugin for Roger
   class Lint
-
-    def initialize(options={})
+    def initialize(_options = {})
     end
 
     # access scss-lint methods to do printing ourselves
@@ -22,28 +22,30 @@ module RogerScssLinter
       end
     end
 
-    def call(test, options={})
+    def lint_report(test, runner)
       success = true
-      test.log(self, "SCSS linting files")
+      sorted_lints = runner.lints.sort_by { |l| [l.filename, l.location] }
+      sorted_lints.map do |lint|
+        test.log(self,
+                (lint.error? ? '[E]' : '[W]') +
+                " #{lint.filename}:#{lint.location.line} " \
+                "#{lint.linter.name}: #{lint.description}")
+        success = false if lint.error?
+      end
+      success
+    end
+
+    def call(test, _options)
+      test.log(self, 'SCSS linting files')
 
       @cli = SCSSLint::CLI.new
       modify_scsslint_cli
       linteroptions = SCSSLint::Options.new.parse([])
       linterconfig = @cli.setup_configuration_public(linteroptions)
+
       runner = SCSSLint::Runner.new(linterconfig)
-
       runner.run @cli.files_to_lint_public(linteroptions, linterconfig)
-
-      sorted_lints = runner.lints.sort_by { |l| [l.filename, l.location] }
-      if sorted_lints.any?
-        sorted_lints.map do |lint|
-          test.log(self, (lint.error? ? "[E]" : "[W]") + " #{lint.filename}:#{lint.location.line} #{lint.linter.name}: #{lint.description}")
-
-          success = false if lint.error?
-        end
-      end
-      success
-
+      lint_report(test, runner)
     end
   end
 end
