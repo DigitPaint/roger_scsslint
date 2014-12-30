@@ -1,5 +1,5 @@
 # Roger ScssLinter
-roger_scsslinter lints scss using [scss-lint](https://github.com/causes/scss-lint). If present, ```.scss-lint.yml``` will be used as normal.
+roger_scsslinter lints scss using [scss-lint](https://github.com/causes/scss-lint). ```.scss-lint.yml``` will be used if present, [scss-lint's default configuration](https://github.com/causes/scss-lint/blob/v0.31.0/config/default.yml) will be used if not.
 
 ## Installation
 * Add ```gem "roger_scsslinter"``` to your Gemfile
@@ -11,7 +11,10 @@ mockup.test do |t|
 end
 ```
 
-* (Optional) put a .scss-linter.yml in your root directory.
+* (Optional) put a .scss-linter.yml in your project's root directory.
+
+## Running
+Execute ```roger test scsslinter```.
 
 ## License
 
