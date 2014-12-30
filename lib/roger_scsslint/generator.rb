@@ -1,10 +1,5 @@
 require 'open-uri'
 
-# <- hekje
-module Roger
-  module Cli; end
-end
-
 require 'roger/cli/generate'
 require 'roger/cli/command'
 require 'roger/generators'
