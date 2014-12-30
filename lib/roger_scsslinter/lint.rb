@@ -6,6 +6,8 @@ require 'scss_lint/runner'
 module RogerScssLinter
   # SCSS linter plugin for Roger
   class Lint
+    # Configurability is the root of all evil
+    # http://fishshell.com/docs/current/design.html#conf
     def initialize(_options = {})
     end
 

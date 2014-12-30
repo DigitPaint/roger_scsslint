@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.authors = ['Hans Krutzer']
   s.email = ['info@digitpaint.nl', 'hans@digitpaint.nl']
   s.name = 'roger_scsslinter'
-  s.version = '0.0.1'
+  s.version = '0.0.2'
   s.homepage = 'https://github.com/hkrutzer/roger_scsslinter'
 
   s.summary = 'Lint SCSS files within Roger'
@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
   s.files = `git ls-files`.split("\n")
   s.require_paths = ['lib']
 
-  s.add_dependency 'roger', '~> 0.12', '>= 0.12.5'
+  s.add_dependency 'roger', '~> 0.13', '>= 0.13.0'
   s.add_dependency 'scss-lint', '~> 0.31', '>= 0.31.0'
 end
