@@ -1,5 +1,5 @@
 # Roger ScssLinter
-roger_scsslinter lints scss using [scss-lint](https://github.com/causes/scss-lint). ```.scss-lint.yml``` will be used if present, [scss-lint's default configuration](https://github.com/causes/scss-lint/blob/v0.31.0/config/default.yml) will be used if not.
+roger_scsslinter lints scss using [scss-lint](https://github.com/causes/scss-lint). ```.scss-lint.yml``` will be used if present, [scss-lint's default configuration](https://github.com/causes/scss-lint/blob/v0.31.0/config/default.yml) will be used if not. When this files is not present scss-lint will walk the directory tree upwards in search for a ```.scss-lint.yml``` file. As a last resort, default.yml is used.
 
 ## Installation
 * Add ```gem "roger_scsslinter"``` to your Gemfile
