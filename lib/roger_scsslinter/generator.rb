@@ -9,8 +9,8 @@ require "roger/cli/generate"
 require "roger/cli/command"
 require "roger/generators"
 
-module RogerScssLinter
-  class Generator < Roger::Generators::Base
+module RogerScssLinter::Generators
+  class ScssLinterGenerator < Roger::Generators::Base
     include Thor::Actions
     CONFIG_PATH = ".scss-lint.yml"
     DEFAULT_CONFIG_URL = "https://raw.githubusercontent.com/edwinvd" \
@@ -39,4 +39,4 @@ module RogerScssLinter
   end
 end
 
-Roger::Generators.register RogerScssLinter::Generator
+Roger::Generators.register RogerScssLinter::Generators::ScssLinterGenerator
