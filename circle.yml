@@ -1,5 +1,6 @@
 dependencies:
   pre:
+    - gem install roger
     - gem install scss-lint
     - gem install test-unit
     - gem install simplecov
