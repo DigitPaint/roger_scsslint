@@ -1,4 +1,5 @@
 require_relative "../lib/roger_scsslint/lint.rb"
+require_relative "test_helper.rb"
 require "test/unit"
 
 class TesterStub
