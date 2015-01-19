@@ -29,9 +29,8 @@ module RogerScssLint
       sorted_lints = runner.lints.sort_by { |l| [l.filename, l.location] }
       sorted_lints.map do |lint|
         test.log(self,
-                (lint.error? ? '[E]' : '[W]') +
-                " #{lint.filename}:#{lint.location.line} " \
-                "#{lint.linter.name}: #{lint.description}")
+                 (lint.error? ? '[E]' : '[W]') +
+                 " #{lint.filename}:#{lint.location.line} #{lint.linter.name}: #{lint.description}")
         success = false if lint.error?
       end
       success

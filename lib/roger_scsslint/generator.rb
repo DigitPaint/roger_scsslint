@@ -1,26 +1,26 @@
-require "open-uri"
+require 'open-uri'
 
 # <- hekje
 module Roger
   module Cli; end
 end
 
-require "roger/cli/generate"
-require "roger/cli/command"
-require "roger/generators"
+require 'roger/cli/generate'
+require 'roger/cli/command'
+require 'roger/generators'
 
 module RogerScssLint::Generators
   class ScssLintGenerator < Roger::Generators::Base
     include Thor::Actions
-    CONFIG_PATH = ".scss-lint.yml"
-    DEFAULT_CONFIG_URL = "https://raw.githubusercontent.com/edwinvd" \
-      "graaf/css/f6cac66cba489ea106a8048d6d86f1830d3090c8/.scss-lint.yml"
+    CONFIG_PATH = '.scss-lint.yml'
+    DEFAULT_CONFIG_URL = 'https://raw.githubusercontent.com/edwinvd' \
+      'graaf/css/f6cac66cba489ea106a8048d6d86f1830d3090c8/.scss-lint.yml'
 
-    desc "Scsslint generator creates an .scss-lint.yml config file"
+    desc 'Scsslint generator creates an .scss-lint.yml config file'
     class_option(
       :config,
       type: :string,
-      aliases: ["-c"],
+      aliases: ['-c'],
       desc: "Optional config file to use takes a path or url, by
              default it uses the company' default"
     )
