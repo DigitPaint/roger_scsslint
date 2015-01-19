@@ -1,9 +1,0 @@
-dependencies:
-  pre:
-    - gem install roger
-    - gem install scss-lint
-    - gem install test-unit
-    - gem install simplecov
-test:
-  override:
-    - cd test; ruby lint_test.rb
