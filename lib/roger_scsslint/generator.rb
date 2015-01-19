@@ -1,11 +1,16 @@
 require 'open-uri'
 
+# <- hekje
+module Roger
+  module Cli; end
+end
+
 require 'roger/cli/generate'
 require 'roger/cli/command'
 require 'roger/generators'
 
-module RogerScssLint::Generators
-  class ScssLintGenerator < Roger::Generators::Base
+module RogerScsslint
+  class ScsslintGenerator < Roger::Generators::Base
     include Thor::Actions
     CONFIG_PATH = '.scss-lint.yml'
     DEFAULT_CONFIG_URL = 'https://raw.githubusercontent.com/edwinvd' \
@@ -34,4 +39,4 @@ module RogerScssLint::Generators
   end
 end
 
-Roger::Generators.register RogerScssLint::Generators::ScssLintGenerator
+Roger::Generators.register RogerScsslint::ScsslintGenerator

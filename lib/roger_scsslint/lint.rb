@@ -3,7 +3,7 @@ require 'scss_lint'
 require 'scss_lint/cli'
 require 'scss_lint/runner'
 
-module RogerScssLint
+module RogerScsslint
   # SCSS linter plugin for Roger
   class Lint
     # Configurability is the root of all evil
@@ -51,4 +51,4 @@ module RogerScssLint
   end
 end
 
-Roger::Test.register :scsslint, RogerScssLint::Lint
+Roger::Test.register :scsslint, RogerScsslint::Lint
