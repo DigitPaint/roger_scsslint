@@ -2,6 +2,7 @@ require 'open-uri'
 
 # <- hekje
 module Roger
+  # <- hekje
   module Cli; end
 end
 
@@ -10,6 +11,7 @@ require 'roger/cli/command'
 require 'roger/generators'
 
 module RogerScsslint
+  # Lint configuration retriever
   class ScsslintGenerator < Roger::Generators::Base
     include Thor::Actions
     CONFIG_PATH = '.scss-lint.yml'
