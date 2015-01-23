@@ -27,6 +27,13 @@ module RogerScsslint
              default it uses the company' default"
     )
 
+    class_option(
+      :force,
+      type: :boolean,
+      aliases: ['-f'],
+      desc: 'Always overwrite the config file'
+    )
+
     # Write config file
     def write_config_file
       if options[:config]
@@ -36,7 +43,7 @@ module RogerScsslint
       end
 
       # Create file check if we don't have a conflict or something
-      create_file "#{@project.path}/#{CONFIG_PATH}", config
+      create_file "#{@project.path}/#{CONFIG_PATH}", config, force: options[:force]
     end
   end
 end
