@@ -19,7 +19,7 @@ class LintTest < Test::Unit::TestCase
   def setup
     @file_name = '.scss-lint.yml'
     assert !File.exist?(@file_name), '.scss-lint.yml file already exists.'
-    FileUtils.cp('./test/sample-scss-lint.yml', './.scss-lint.yml')
+    FileUtils.cp('./test/data/sample-scss-lint.yml', './.scss-lint.yml')
   end
 
   def test_lint
@@ -28,12 +28,13 @@ class LintTest < Test::Unit::TestCase
     linter = RogerScsslint::Lint.new
     linter.call(faketester, {})
 
+    testfile = 'test/data/test.scss'
     assert_equal(faketester.messages,
                  ['SCSS linting files',
-                  '[W] test/test.scss:1 SingleLinePerSelector: Each selector '\
+                  "[W] #{testfile}:1 SingleLinePerSelector: Each selector "\
                   'in a comma sequence should be on its own line',
-                  '[W] test/test.scss:2 ZeroUnit: `0px` should be written without units as `0`',
-                  '[W] test/test.scss:3 FinalNewline: Files should end with a trailing newline'])
+                  "[W] #{testfile}:2 ZeroUnit: `0px` should be written without units as `0`",
+                  "[W] #{testfile}:3 FinalNewline: Files should end with a trailing newline"])
   end
 
   def teardown
