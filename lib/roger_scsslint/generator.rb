@@ -9,14 +9,14 @@ require "roger/cli/generate"
 require "roger/cli/command"
 require "roger/generators"
 
-module RogerScssLinter::Generators
-  class ScssLinterGenerator < Roger::Generators::Base
+module RogerScssLint::Generators
+  class ScssLintGenerator < Roger::Generators::Base
     include Thor::Actions
     CONFIG_PATH = ".scss-lint.yml"
     DEFAULT_CONFIG_URL = "https://raw.githubusercontent.com/edwinvd" \
       "graaf/css/f6cac66cba489ea106a8048d6d86f1830d3090c8/.scss-lint.yml"
 
-    desc "Scsslinter generator creates an .scss-lint.yml config file"
+    desc "Scsslint generator creates an .scss-lint.yml config file"
     class_option(
       :config,
       type: :string,
@@ -39,4 +39,4 @@ module RogerScssLinter::Generators
   end
 end
 
-Roger::Generators.register RogerScssLinter::Generators::ScssLinterGenerator
+Roger::Generators.register RogerScssLint::Generators::ScssLintGenerator
