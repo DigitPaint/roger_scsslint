@@ -15,8 +15,7 @@ module RogerScsslint
   class Generator < Roger::Generators::Base
     include Thor::Actions
     CONFIG_PATH = '.scss-lint.yml'
-    DEFAULT_CONFIG_URL = 'https://raw.githubusercontent.com/edwinvd' \
-      'graaf/css/f6cac66cba489ea106a8048d6d86f1830d3090c8/.scss-lint.yml'
+    DEFAULT_CONFIG_URL = 'https://raw.githubusercontent.com/DigitPaint/css/master/linters/.scss-lint.yml'
 
     desc 'Scsslint generator creates an .scss-lint.yml config file'
     class_option(
