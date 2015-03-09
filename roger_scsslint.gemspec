@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.authors = ["Hans Krutzer", "Flurin Egger"]
   s.email = ["info@digitpaint.nl", "hans@digitpaint.nl", "flurin@digitpaint.nl"]
   s.name = "roger_scsslint"
-  s.version = "1.0.0"
+  s.version = "1.1.0"
   s.homepage = "https://github.com/hkrutzer/roger_scsslint"
 
   s.summary = "Lint SCSS files within Roger"
