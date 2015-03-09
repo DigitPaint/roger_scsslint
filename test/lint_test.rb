@@ -1,5 +1,5 @@
-require_relative '../lib/roger_scsslint/lint.rb'
-require 'test/unit'
+require_relative "../lib/roger_scsslint/lint.rb"
+require "test/unit"
 
 # Fake tester to pass into the linter plugin
 class TesterStub
@@ -17,9 +17,9 @@ end
 # Linting plugin unit test
 class LintTest < Test::Unit::TestCase
   def setup
-    @file_name = '.scss-lint.yml'
-    assert !File.exist?(@file_name), '.scss-lint.yml file already exists.'
-    FileUtils.cp('./test/data/sample-scss-lint.yml', './.scss-lint.yml')
+    @file_name = ".scss-lint.yml"
+    assert !File.exist?(@file_name), ".scss-lint.yml file already exists."
+    FileUtils.cp("./test/data/sample-scss-lint.yml", "./.scss-lint.yml")
   end
 
   def test_lint
@@ -29,7 +29,7 @@ class LintTest < Test::Unit::TestCase
     linter.call(faketester, {})
 
     assert_equal(faketester.messages,
-                 ['SCSS linting files'])
+                 ["SCSS linting files"])
   end
 
   def teardown

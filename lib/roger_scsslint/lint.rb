@@ -1,7 +1,7 @@
-require 'roger/test'
-require 'scss_lint'
-require 'scss_lint/cli'
-require 'scss_lint/runner'
+require "roger/test"
+require "scss_lint"
+require "scss_lint/cli"
+require "scss_lint/runner"
 
 module RogerScsslint
   # SCSS linter plugin for Roger
@@ -15,12 +15,12 @@ module RogerScsslint
     def detect_scsslint
       command = [@command, "-v", ">/dev/null"]
       detect = system(Shellwords.join(command))
-      fail 'Could not find linter. Linter should be in Gemfile. ' unless detect
+      fail "Could not find linter. Linter should be in Gemfile. " unless detect
     end
 
     def call(test, _options)
       detect_scsslint
-      test.log(self, 'SCSS linting files')
+      test.log(self, "SCSS linting files")
       system(@command)
     end
   end
