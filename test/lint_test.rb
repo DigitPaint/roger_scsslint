@@ -28,13 +28,8 @@ class LintTest < Test::Unit::TestCase
     linter = RogerScsslint::Lint.new
     linter.call(faketester, {})
 
-    testfile = 'test/data/test.scss'
     assert_equal(faketester.messages,
-                 ['SCSS linting files',
-                  "[W] #{testfile}:1 SingleLinePerSelector: Each selector "\
-                  'in a comma sequence should be on its own line',
-                  "[W] #{testfile}:2 ZeroUnit: `0px` should be written without units as `0`",
-                  "[W] #{testfile}:3 FinalNewline: Files should end with a trailing newline"])
+                 ['SCSS linting files'])
   end
 
   def teardown
