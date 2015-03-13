@@ -1,7 +1,4 @@
 require "roger/test"
-require "scss_lint"
-require "scss_lint/cli"
-require "scss_lint/runner"
 
 module RogerScsslint
   # SCSS linter plugin for Roger
@@ -19,6 +16,12 @@ module RogerScsslint
     end
 
     def call(test, _options)
+      # The scss_lint gem overwrites some of the Sass api,
+      # we now defer loading and thus should run into trouble.
+      require "scss_lint"
+      require "scss_lint/cli"
+      require "scss_lint/runner"
+
       test.log(self, "SCSS linting files")
       system(Shellwords.join([@options[:scss_lint], "--config=#{@options[:config_file]}"]))
     end
