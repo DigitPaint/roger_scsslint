@@ -15,7 +15,7 @@ mockup.test do |t|
 end
 ```
 
-* (Recommended) put a .scss-linter.yml in your project's root directory. You can use ```$ roger generate scsslint```, to use [ours](https://github.com/DigitPaint/css).
+* Put a .scss-linter.yml in your project's root directory. You can use ```$ roger generate scsslint```, to use [ours](https://github.com/DigitPaint/css).
 
 ## Running
 Execute ```roger test scsslint```.
