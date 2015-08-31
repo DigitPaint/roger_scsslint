@@ -10,7 +10,7 @@ Improve the quality of your scss with roger_scsslinter. This plugin for roger li
 
 * Add this to your Mockupfile:
 ```
-mockup.test do |t|
+roger.test do |t|
   t.use :scsslint
 end
 ```
